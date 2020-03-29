@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preload" href="./main.js" as="script" />
+    <title>Find Your Clothing</title>
+  </head>
+  <body class="search-body">
+    <div class="loader-wrapper">
+      <img
+        src="https://cdn.shopify.com/s/files/1/0064/3262/0633/t/35/assets/loader.gif?v=3769037041223205823"
+        alt="loader"
+        class="loader"
+      />
+    </div>
+
+    <div class="top-section" id="search-top-section">
+      <div
+        class="name"
+        onclick="document.location.href='./index.html';return true;"
+      >
+        Curated Clothing
+      </div>
+    </div>
+    <div class="page">
+      <div class="search-hero-section-wrapper">
+        <div class="search-hero-section">
+          <h1>What are you looking for?</h1>
+          <form class="form" action="./slider.html" method="GET">
+            <input type="search" placeholder="Winter Jacket" />
+
+            <input type="submit" class="hvr-back-pulse" value="Find" />
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="./main.js" defer></script>
+  </body>
+</html>

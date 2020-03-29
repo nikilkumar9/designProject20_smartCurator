@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Caladea&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preload" href="./main.js" as="script" />
+  </head>
+  <!-- LANDING PAGE -->
+  <body>
+    <div class="loader-wrapper">
+      <img
+        src="https://cdn.shopify.com/s/files/1/0064/3262/0633/t/35/assets/loader.gif?v=3769037041223205823"
+        alt="loader"
+        class="loader"
+      />
+    </div>
+
+    <div class="top-section">
+      <div
+        class="name"
+        onclick="document.location.href='./index.html';return true;"
+      >
+        Curated Clothing
+      </div>
+    </div>
+    <div class="page">
+      <section class="hero-section">
+        <div class="left">
+          <h2>
+            <span>We help...</span>
+
+            <div class="what-we-do">
+              <span id="what-we-do-1">make shopping fun</span>
+              <br />
+              <span id="what-we-do-2">reduce your time</span>
+              <br />
+              <span id="what-we-do-3">save you money</span>
+            </div>
+          </h2>
+        </div>
+        <div class="right what-we-do-image-container">
+            <div id="what-we-do-image-1"></div>
+            <div id="what-we-do-image-2"></div>
+            <div id="what-we-do-image-3"></div>
+
+        </div>
+        <div class="bottom"><a href="./search.html">Get Started </a></div>
+      </section>
+    </div>
+    <script src="./main.js" defer></script>
+  </body>
+</html>
