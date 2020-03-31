@@ -1,3 +1,3 @@
-access = 'AKIAZXJCGQUHWSS4GNAO'
-secret = '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'
+access = ''
+secret = ''
 
