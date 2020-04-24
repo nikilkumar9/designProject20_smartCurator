@@ -4,7 +4,7 @@ This is a Python template for Alexa to get you building skills (conversations) q
 
 from __future__ import print_function
 import boto3, json
-
+import os
 
 # --------------- Helpers that build all of the responses ----------------------
 
@@ -72,6 +72,14 @@ def get_human_help_request():
     # invokeLam = boto3.client("lambda", region_name="us-east-1")
     # payload = {"message": "Hi, you have been invoked."}
     # resp = invokeLam.invoke(FunctionName = "sendSMS_nodejs", InvocationType = "Event", Payload = json.dumps(payload))
+    
+    sns = boto3.client('sns', region_name="us-east-1")
+    # Publish a help message to specified SNS topic
+    response = sns.publish(
+        TopicArn = os.environ['SNSTopicARN_HKNumber'],
+        Subject = 'Customer Help needed!',
+        Message = 'Patrick at Machine 2'
+    )
     
     should_end_session = False
     return build_response(session_attributes, build_speechlet_response(
