@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <!-- CSS -->
+    <style>
+    #my_camera{
+    width: 320px;
+    height: 240px;
+    border: 1px solid black;
+    }
+    </style>
+
+    <!-- -->
+    <div id="my_camera"></div>
+    <input type=button value="Take Snapshot" onClick="takeSnapshot()">
+    <input type=button value="Save Snapshot" onClick="saveSnap()">
+    
+    <div id="results" ></div>
+    
+    <!-- Script -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.min.js"></script>
+    <script>
+    Webcam.set({
+    width: 320,
+    height: 240,
+    image_format: 'jpeg',
+    jpeg_quality: 90
+    });
+    Webcam.attach('#my_camera');
+
+function takeSnapshot() {
+    // take snapshot and get image data
+    Webcam.snap(function(data_uri) {
+        // display results in page
+        document.getElementById('results').innerHTML =
+            '<img id="imageprev" src="' + data_uri + '"/>';
+    });
+
+    Webcam.reset();
+}
+
+function saveSnap() {
+    // Get base64 value from <img id='imageprev'> source
+    var base64image = document.getElementById("imageprev").src;
+
+    Webcam.upload(base64image, 'upload.php', function(code, text) {
+        console.log('Save successfully');
+    });
+
+}
+    </script>
+</html>
