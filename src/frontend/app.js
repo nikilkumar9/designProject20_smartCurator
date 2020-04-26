@@ -27,8 +27,8 @@ function goHomePage() {
 const AWS = require('aws-sdk')
 AWS.config.update({
     region: 'us-east-1',
-    accessKeyId: 'AKIAZXJCGQUH4YE3X76Z',
-    secretAccessKey: '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'
+    accessKeyId: '',
+    secretAccessKey: ''
 })
 
 var s3 = new AWS.S3()
