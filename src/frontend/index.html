@@ -9,9 +9,29 @@
       rel="stylesheet"
     />
     <link rel="preload" href="./main.js" as="script" />
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
   </head>
   <!-- LANDING PAGE -->
   <body>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyClo52cLq4nyObUQl7PdkRpBb4E67z9Q3E",
+        authDomain: "designproject-f97d8.firebaseapp.com",
+        databaseURL: "https://designproject-f97d8.firebaseio.com",
+        projectId: "designproject-f97d8",
+        storageBucket: "designproject-f97d8.appspot.com",
+        messagingSenderId: "251561500310",
+        appId: "1:251561500310:web:27d06ed4cbae22cc0facb7",
+        measurementId: "G-YZJ0SMV54N"
+      };
+      
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
     <div class="loader-wrapper">
       <img
         src="https://cdn.shopify.com/s/files/1/0064/3262/0633/t/35/assets/loader.gif?v=3769037041223205823"
@@ -49,13 +69,13 @@
             <div id="what-we-do-image-3"></div>
 
         </div>
-        <div class="bottom"><a href="./search.html" id="myLink">Get Started </a></div>
+        <div class="bottom"><a href="./separch.html" id="myLink">Get Started </a></div>
       </section>
     </div>
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="/__/firebase/7.14.1/firebase-app.js"></script>
+    <!-- <script src="/__/firebase/7.14.1/firebase-app.js"></script> -->
     <script src="main.js" defer></script>
-    <script src="app.js" defer></script>
+    <script src="./app.js"></script>
   </body>
 </html>

@@ -3,10 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preload" href="./main.js" as="script" />
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
     <title>Find Your Clothing</title>
   </head>
   <body class="search-body">
+    
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyClo52cLq4nyObUQl7PdkRpBb4E67z9Q3E",
+      authDomain: "designproject-f97d8.firebaseapp.com",
+      databaseURL: "https://designproject-f97d8.firebaseio.com",
+      projectId: "designproject-f97d8",
+      storageBucket: "designproject-f97d8.appspot.com",
+      messagingSenderId: "251561500310",
+      appId: "1:251561500310:web:27d06ed4cbae22cc0facb7",
+      measurementId: "G-YZJ0SMV54N"
+    };
+    
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+    
     <div class="loader-wrapper">
       <img
         src="https://cdn.shopify.com/s/files/1/0064/3262/0633/t/35/assets/loader.gif?v=3769037041223205823"
@@ -36,5 +55,6 @@
       </div>
     </div>
     <script src="./main.js" defer></script>
+    <script src="./app.js"></script>
   </body>
 </html>
