@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
+  <script defer src="face-api.min.js"></script>
+  <script defer src="facedetection.js"></script>
+  
+  <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyClo52cLq4nyObUQl7PdkRpBb4E67z9Q3E",
+        authDomain: "designproject-f97d8.firebaseapp.com",
+        databaseURL: "https://designproject-f97d8.firebaseio.com",
+        projectId: "designproject-f97d8",
+        storageBucket: "designproject-f97d8.appspot.com",
+        messagingSenderId: "251561500310",
+        appId: "1:251561500310:web:27d06ed4cbae22cc0facb7",
+        measurementId: "G-YZJ0SMV54N"
+      };
+      
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+
+      setTimeout(function(){ 
+        document.location.href = "/picture.html"
+      }, 12000);
+  </script>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    canvas {
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <video id="video" width="720" height="560" autoplay muted></video>  
+</body>
+</html>

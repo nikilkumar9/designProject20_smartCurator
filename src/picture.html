@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyClo52cLq4nyObUQl7PdkRpBb4E67z9Q3E",
+          authDomain: "designproject-f97d8.firebaseapp.com",
+          databaseURL: "https://designproject-f97d8.firebaseio.com",
+          projectId: "designproject-f97d8",
+          storageBucket: "designproject-f97d8.appspot.com",
+          messagingSenderId: "251561500310",
+          appId: "1:251561500310:web:27d06ed4cbae22cc0facb7",
+          measurementId: "G-YZJ0SMV54N"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+      </script>
+
+    <!-- CSS -->
+    <style>
+    #my_camera{
+    width: 320px;
+    height: 240px;
+    border: 1px solid black;
+    }
+    </style>
+
+    <!-- -->
+    <div id="my_camera"></div>
+    <input type=button value="Take Snapshot" onClick="takeSnapshot()">
+    
+    <div id="results"></div>
+    
+    <!-- Script -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.min.js"></script>
+    <script>
+        Webcam.set({
+        width: 320,
+        height: 240,
+        image_format: 'jpeg',
+        jpeg_quality: 90
+        });
+        Webcam.attach('#my_camera');
+
+        function takeSnapshot() {
+            // take snapshot and get image data
+            Webcam.snap(function(data_uri) {
+                // display results in page
+                document.getElementById('results').innerHTML =
+                    '<img id="imageprev" src="' + data_uri + '"/>';
+            });
+        }
+
+        function saveSnap() {
+            // Get base64 value from <img id='imageprev'> source
+            var base64image = document.getElementById("imageprev").src;
+            Webcam.upload(base64image, 'upload.php', function(code, text) {
+                console.log('Save successfully');
+            });
+        }
+    </script>
+    <script src="./app.js"></script>
+</html>
