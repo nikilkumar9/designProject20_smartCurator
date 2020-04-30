@@ -1,0 +1,22 @@
+html
+{
+    height: 100%
+}
+
+body
+{
+    height: 100%;
+    background-color: #FFFFC7;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+video
+{
+    border: 3px solid rgb(194, 194, 5);
+    /* box-shadow: 0 0 5px #333; */
+}
