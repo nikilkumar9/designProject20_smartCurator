@@ -23,15 +23,32 @@
     #my_camera{
     width: 320px;
     height: 240px;
-    border: 1px solid black;
+   /*  border: 3px solid black; */
     }
     </style>
 
+    <link rel="stylesheet" href="./picture.css">
+
     <!-- -->
-    <div id="my_camera"></div>
-    <input type=button value="Take Snapshot" onClick="takeSnapshot()">
-    
-    <div id="results"></div>
+    <body>
+        <div class="top-section">
+            
+            Picture Mode
+          
+          </div>
+        <div id="my_camera" class="picture"></div>
+        
+        <div class="box bg-1">
+        <input 
+        type=button 
+        value="Take Snapshot" 
+        onClick="takeSnapshot()"
+        class="button button--wayra button--border-thick button--text-upper button--size-s">
+        </div>
+
+        <div id="results" class="picture"></div>
+    </body>
+ 
     
     <!-- Script -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.min.js"></script>
