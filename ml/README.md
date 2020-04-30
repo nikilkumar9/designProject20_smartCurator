@@ -1,5 +1,5 @@
 # Smart Curator ML Script
-## Detect the size of body parts using Image-Processing
+## Detect the size of body parts using Computer Vision - Segmentation/Edge Detection
 
 Follow the Jupyter Notebook for in-detail explanation.
 
