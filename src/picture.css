@@ -23,6 +23,15 @@ body {
 }
 
 
+h2
+{
+    position: absolute;
+    top: -25%;
+    right: 17%;
+    color: rgb(105, 77, 0)
+}
+
+
 /* Section: content body: */
 
 #results
@@ -31,6 +40,11 @@ body {
     width: 320px;
     height: 240px;
     /* border: 1px solid black */
+}
+
+#results-wrapper
+{
+    position: relative
 }
 
 .picture
