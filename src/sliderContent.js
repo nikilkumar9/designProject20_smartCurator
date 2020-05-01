@@ -142,7 +142,7 @@ function getQueryStringCriteria() {
 function destructureQueryToRegex(str) {
   // NOTE: for reference, full regex should be of the form '(^|\s)(the|number)+'
   const words = str.split(" ");
-  var regexStr = "(^|s)(";
+  var regexStr = "(^|\s)(";
   for (let i = 0; i < words.length - 1; i++) {
     regexStr += words[i];
     regexStr += "|";
@@ -162,6 +162,7 @@ function filterData(data) {
   const searchCriteria = getQueryStringCriteria();
   let resultantFilteredData = [];
   const filteredAll = [];
+  const filtered2of3 = [];
   const filteredType = [];
   const filteredSeason = [];
 
@@ -181,16 +182,23 @@ function filterData(data) {
       const type = item["type"];
       const season = item["season"];
       const color = item["color"];
-      /*      console.log(regex.test(type), ' ', type);
-      console.log(regex.test(season), ' ', season);
-      console.log(regex.test(color), ' ', color); */
+
       if (regex.test(type) && regex.test(season) && regex.test(color)) {
         // if contains all criteria
         filteredAll.push(item);
-      } else if (regex.test(type)) {
+      } else if (
+        (regex.test(type) && regex.test(season)) ||
+        (regex.test(type) && regex.test(color)) 
+      ) {
         // if contains type:
-        filteredType.push(item);
-      } else if (regex.test(season)) {
+        filtered2of3.push(item);
+    
+      }
+      else if(regex.test(type))
+      {
+          filteredType.push(item)
+      }
+      else if (regex.test(season)) {
         // if contains season:
         filteredSeason.push(item);
       }
@@ -199,6 +207,7 @@ function filterData(data) {
   console.log("Finished filtering data: ");
   resultantFilteredData = resultantFilteredData.concat(
     filteredAll,
+    filtered2of3,
     filteredType,
     filteredSeason
   );
@@ -228,7 +237,7 @@ function selectivelyUpperCaseText(text, ...positions) {
 function populateElems(filteredData) {
   for (let i = numOfHTMLelements - 1; i >= 0; i--) {
     const item = filteredData[numOfHTMLelements - 1 - i];
-    
+
     // Append background image:
     const imageURL = item["image"];
     sliderImageArr[i].style.backgroundImage =
